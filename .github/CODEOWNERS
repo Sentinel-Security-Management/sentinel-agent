@@ -1,0 +1,8 @@
+# Global default owners
+* @bvsaisujith
+
+# Docs
+/docs/ @bvsaisujith
+
+# GitHub config and workflows
+/.github/ @bvsaisujith

@@ -1,0 +1,10 @@
+.env
+*.pem
+*.key
+coverage.out
+bin/
+dist/
+runtime/
+artifacts/
+.vscode/
+.idea/
