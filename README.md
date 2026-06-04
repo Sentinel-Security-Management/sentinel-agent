@@ -2,6 +2,7 @@
 [![License: FSL-1.1](https://img.shields.io/badge/license-FSL--1.1-blue.svg)](LICENSE)
 [![Go Version](https://img.shields.io/github/go-mod/go-version/Sentinel-Security-Management/sentinel-agent)](go.mod)
 [![Release](https://img.shields.io/github/v/release/Sentinel-Security-Management/sentinel-agent)](https://github.com/Sentinel-Security-Management/sentinel-agent/releases)
+[![DeepWiki](https://img.shields.io/badge/Docs-DeepWiki-blue)](YOUR_DEEPWIKI_URL)
 
 
 ## Contributor Rewards Program
