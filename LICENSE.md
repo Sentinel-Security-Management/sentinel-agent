@@ -8,11 +8,27 @@ Licensed Work: Sentinel Agent
 
 Copyright: © 2026 The Deployment Lab
 
-Effective Date: 2026-06-04
+License: Functional Source License 1.1
 
-Change Date: 2028-06-04
+Future License: Apache License 2.0
 
-Change License: Apache License 2.0
+### Release-Based Conversion Policy
+
+Sentinel Agent follows a release-based licensing model.
+
+Each official tagged release is licensed under FSL-1.1-ALv2 upon publication.
+
+Exactly twenty-four (24) months after the publication date of a tagged release, that specific release automatically becomes available under the Apache License 2.0.
+
+Examples:
+
+* v0.1.0 released on 2026-06-04 → Apache 2.0 on 2028-06-04
+* v0.2.0 released on 2026-09-01 → Apache 2.0 on 2028-09-01
+* v1.0.0 released on 2028-01-15 → Apache 2.0 on 2030-01-15
+
+This conversion applies only to the contents of the specific tagged release.
+
+Future releases may contain additional code, features, fixes, or changes that remain licensed under FSL until their respective conversion dates.
 
 ### Licensed Work Definition
 
@@ -55,9 +71,26 @@ The Deployment Lab, Sentinel, Sentinel Agent, associated logos, branding assets,
 
 This license does not grant permission to use these trademarks except for attribution and factual reference.
 
+### Release Conversion Records
+
+The Apache 2.0 conversion date for each release shall be documented in:
+
+* Git tags
+* GitHub Releases
+* Release notes
+* CHANGELOG.md
+
+For avoidance of doubt, conversion dates are determined per release and not by the age of the repository itself.
+
 ---
 
 Abbreviation: FSL-1.1-ALv2
+
 Full Name: Functional Source License 1.1 with Apache License 2.0 Change License
+
 Version: 1.1
+
 Change License Version: 2.0
+Change License Name: Apache License 2.0
+Change License Abbreviation: Apache 2.0
+Change License URL: https://www.apache.org/licenses/LICENSE-2.0
