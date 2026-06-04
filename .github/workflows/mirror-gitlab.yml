@@ -10,19 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Push to GitLab
+      - name: Verify secrets exist
         env:
           GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@gitlab.com/sentinel-security-management/sentinel-agent.git
-          git push gitlab --all
-          git push gitlab --tags
+          echo "Username length: ${#GITLAB_USERNAME}"
+          echo "Token length: ${#GITLAB_TOKEN}"
 
+      - name: Add GitLab remote
+        env:
+          GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git remote add gitlab "https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@gitlab.com/sentinel-security-management/sentinel-agent.git"
 
-          
+          git remote -v
+
+      - name: Push
+        run: |
+          git push gitlab main
