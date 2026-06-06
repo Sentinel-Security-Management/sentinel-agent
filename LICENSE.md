@@ -63,7 +63,7 @@ You may not:
 * Offer Sentinel Agent as a commercial competing product or service.
 * Sell hosted versions of Sentinel Agent.
 * Create a managed service that substantially replicates Sentinel Agent functionality.
-* Repackage Sentinel Agent as a competing security platform during the FSL protection period.
+* Repackage Sentinel Agent as a competing any type of platform during the FSL protection period.
 
 ### Trademark Notice
 
@@ -91,6 +91,9 @@ Full Name: Functional Source License 1.1 with Apache License 2.0 Change License
 Version: 1.1
 
 Change License Version: 2.0
+
 Change License Name: Apache License 2.0
+
 Change License Abbreviation: Apache 2.0
+
 Change License URL: https://www.apache.org/licenses/LICENSE-2.0

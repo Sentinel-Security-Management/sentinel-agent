@@ -772,32 +772,35 @@ ghcr.io/sentinel-security-management/sentinel-agent:{version}   multi-arch image
 ```
 
 ---
-
 ## 8. File layout
 
-```
+```text
 sentinel-agent/
+  adr/
+    ADR-010-internal-go-layout.md
   cmd/
     agent/
       main.go            entry point, signal handling, lifecycle
-  config/
-    config.go            Config struct, Load(), validation
-    config_test.go
-  identity/
-    detector.go          CloudIdentity, Detect(), ToOTelResource()
-    detector_test.go
-  pipeline/
-    pipeline.go          Pipeline, Build(), Run()
-    pipeline_test.go
-    receivers.go         receiver configuration per environment
-    processors.go        processor configuration
-    exporters.go         exporter configuration with mTLS
-  scrub/
-    processor.go         Processor, ProcessTraces/Metrics/Logs
-    policy.go            Policy, FieldRule, LoadPolicy()
-    patterns.go          runtime detection regex patterns
-    processor_test.go
-    policy_test.go
+  internal/
+    agent/
+      config/
+        config.go            Config struct, Load(), validation
+        config_test.go
+      identity/
+        detector.go          CloudIdentity, Detect(), ToOTelResource()
+        detector_test.go
+      pipeline/
+        pipeline.go          Pipeline, Build(), Run()
+        pipeline_test.go
+        receivers.go         receiver configuration per environment
+        processors.go        processor configuration
+        exporters.go         exporter configuration with mTLS
+      scrub/
+        processor.go         Processor, ProcessTraces/Metrics/Logs
+        policy.go            Policy, FieldRule, LoadPolicy()
+        patterns.go          runtime detection regex patterns
+        processor_test.go
+        policy_test.go
   go.mod
   go.sum
   Dockerfile
@@ -811,4 +814,3 @@ sentinel-agent/
   PRD.md
   SRS.md
   ARD.md
-```

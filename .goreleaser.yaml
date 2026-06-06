@@ -1,0 +1,54 @@
+version: 2
+project_name: sentinel-agent
+
+env:
+  - CGO_ENABLED=0
+
+builds:
+  - id: sentinel-agent
+    main: ./cmd/agent
+    binary: sentinel-agent
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+
+# Automatically generate a Software Bill of Materials
+sboms:
+  - artifacts: archive
+
+# Create tar.gz archives of the binaries
+archives:
+  - format: tar.gz
+    name_template: >-
+      {{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}
+
+# Cryptographic checksums
+checksum:
+  name_template: 'checksums.txt'
+
+# Build and push the Docker image to GHCR
+dockers:
+  - image_templates:
+      - "ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-amd64"
+    use: buildx
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--platform=linux/amd64"
+  - image_templates:
+      - "ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-arm64"
+    use: buildx
+    dockerfile: Dockerfile
+    build_flag_templates:
+      - "--platform=linux/arm64"
+
+docker_manifests:
+  - name_template: ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}
+    image_templates:
+      - ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-amd64
+      - ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-arm64
+  - name_template: ghcr.io/sentinel-security-management/sentinel-agent:latest
+    image_templates:
+      - ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-amd64
+      - ghcr.io/sentinel-security-management/sentinel-agent:{{ .Version }}-arm64
